@@ -47,18 +47,42 @@ body {
     padding: 0.2rem;
 }
 
+
 .formula-actions-cont {
-    height: 3rem;
-    background-color: lightblue;
+    height: 2rem;
+    background-color: #ecf0f1;
     padding-left: 1rem;
+    display: flex;
+    align-items: center;
 }
+.formula-actions-cont > * {
+    display: inline-block;
+    margin-right: 0.7rem;
+}
+.formula-actions-cont > input {
+    border: none;
+    outline: none; 
+    height: 70%;   
+}
+.address-bar {
+    width: 5rem;
+    margin-right: 1rem;
+    text-align: center;
+}
+.formula-icon {
+    width : 1.2rem;
+}
+.formula-bar {
+    width: calc(100vw - 1rem - 1rem - 5rem - 0.7rem - 0.7rem);
+}
+
 
 .sheet-actions-cont {
     height: 3rem;
     background-color: #ecf0f1;
     display: flex;
     align-items: center;
-    padding-left: 0.5rem;
+    padding-left: 1rem;
     padding-right: 0.5rem;
     gap: 1rem; /*Gap will be provided in between the elements*/
 }
@@ -82,7 +106,64 @@ body {
     text-decoration-thickness: 2px;
 }
 
+
 .grid-cont {
-    height: calc(100vh - 3rem - 3rem - 3rem - 3rem);
+    background-color: #ecf0f1;
+    height: calc(100vh - 3rem - 3rem - 2rem - 3rem);
+    position: relative;
+    overflow: auto;
+}
+.top-left-dummy-box { 
+    height: 1.7rem;
+    width: 2rem;
+    background-color: #747d8c;
+    position: fixed;
+    z-index: 5; /*makes the element opaque, prevents other elements from appearing beneath it when scrolled*/   
+}
+.address-col-cont {
+    width: 2rem;
+    position: sticky;
+    top: 2rem;
+    left: 0;
+}
+.address-col {
+    border: 1px solid #dfe4ea;
+    height: 1.7rem;
+    width: 2rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cells-cont {
+    position: absolute;
+    top: 0;
+    left: 2rem;
+    width: calc(100vw - 2rem);
+}
+.address-row-cont {
+    display: flex;
+    position: sticky;
+    top: 0;
+    left: 2rem;
+}
+.address-row {
+    border: 1px solid #dfe4ea;
+    height: 1.7rem;
+    width: 6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0; /*To make your flex item take the specified width, and prevent them from automatically shrinking*/
+}
+.row-cont {
+    display: flex;
 }
 
+.cell {
+    border: 1px solid #dfe4ea;
+    height: 1.7rem;
+    width: 6rem;
+    flex-shrink: 0;
+    outline-color: #0a673d;
+}
